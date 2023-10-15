@@ -14,13 +14,13 @@ const Products = () => {
     console.log(data);
   }, [data]);
   return (
-    <div className="flex justify-between">
-      <div className="grid grid-cols-3 mx-auto gap-11 h-fit mt-20">
-        {data.map((e) => (
-          <SingleProduct key={e.id} data={e} />
-        ))}
-        {/* <SingleProduct />
-        <SingleProduct /> */}
+    <div className="grid grid-cols-2">
+      <div className="col-span-full mx-auto">
+        <div className=" grid md:grid-cols-3 mr-60 gap-11 h-fit mt-20">
+          {data.map((e) => (
+            <SingleProduct key={e.id} data={e} />
+          ))}
+        </div>
       </div>
       <SidebarCart />
     </div>

@@ -3,7 +3,7 @@ import React from "react";
 
 const SidebarCart = () => {
   return (
-    <div className="p-5 bg-orange-200 w-60 h-screen ml-20">
+    <div className="fixed p-5 bg-orange-200 w-60 h-screen ml-20 right-0">
       <h1 className="text-center text-lg font-bold">Order Summery</h1>
       <div className="text-base flex flex-col gap-3 mt-5">
         <p>Selected Items: 6</p>
