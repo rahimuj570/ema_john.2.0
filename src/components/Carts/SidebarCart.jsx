@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 const SidebarCart = ({ carts, clearCarts }) => {
   let quantity = 0,
@@ -27,7 +28,19 @@ const SidebarCart = ({ carts, clearCarts }) => {
         Grand Total: ${(tax + totalPrice + shippingCharge).toFixed(2)}
       </h2>
       <button
-        onClick={clearCarts}
+        onClick={() => {
+          clearCarts();
+          toast.success("Successfully Cart is Cleared", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }}
         className="btn bg-rose-500 py-2 px-5 hover:bg-red-600 duration-200 outline-none text-white rounded"
       >
         Clear Cart
@@ -35,6 +48,20 @@ const SidebarCart = ({ carts, clearCarts }) => {
       <button className="block mt-2 btn bg-yellow-400 py-2 px-5 hover:bg-yellow-500 duration-200 outline-none text-white rounded">
         Review Cart
       </button>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      {/* Same as */}
+      <ToastContainer />
     </div>
   );
 };
