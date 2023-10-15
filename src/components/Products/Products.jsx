@@ -45,6 +45,12 @@ const Products = () => {
     }
     setCarts(newCarts);
   };
+
+  const clearCarts = () => {
+    setCarts([]);
+    localStorage.removeItem("cartList");
+  };
+
   return (
     <div className="grid grid-cols-2">
       <div className="col-span-full mx-auto">
@@ -58,7 +64,7 @@ const Products = () => {
           ))}
         </div>
       </div>
-      <SidebarCart carts={carts} />
+      <SidebarCart carts={carts} clearCarts={clearCarts} />
     </div>
   );
 };

@@ -3,7 +3,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 
-const SidebarCart = ({ carts }) => {
+const SidebarCart = ({ carts, clearCarts }) => {
   let quantity = 0,
     totalPrice = 0,
     shippingCharge = 0,
@@ -24,9 +24,12 @@ const SidebarCart = ({ carts }) => {
         <p>Tax: ${tax.toFixed(2)}</p>
       </div>
       <h2 className="text-lg font-bold my-5">
-        Grand Total: ${tax + totalPrice + shippingCharge}
+        Grand Total: ${(tax + totalPrice + shippingCharge).toFixed(2)}
       </h2>
-      <button className="btn bg-rose-500 py-2 px-5 hover:bg-red-600 duration-200 outline-none text-white rounded">
+      <button
+        onClick={clearCarts}
+        className="btn bg-rose-500 py-2 px-5 hover:bg-red-600 duration-200 outline-none text-white rounded"
+      >
         Clear Cart
       </button>
       <button className="block mt-2 btn bg-yellow-400 py-2 px-5 hover:bg-yellow-500 duration-200 outline-none text-white rounded">
