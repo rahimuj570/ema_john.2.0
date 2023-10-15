@@ -3,9 +3,7 @@
 import React, { Component } from "react";
 import CartToLocalDB from "../../hooks/LocalDB";
 
-const SingleProduct = ({ data }) => {
-  const { addToCart } = CartToLocalDB;
-
+const SingleProduct = ({ data, addToCartBtnHandle }) => {
   return (
     <div className="flex flex-col justify-between w-56 shadow-lg text-center border-gray-300 border rounded py-10 pb-0  pt-0">
       <div className="">
@@ -29,7 +27,7 @@ const SingleProduct = ({ data }) => {
           <p>Rating : {data.ratings} star</p>
         </div>
         <button
-          onClick={() => addToCart(data)}
+          onClick={() => addToCartBtnHandle(data)}
           className="hover:bg-orange-300 duration-200 mt-2 py-2 w-full bg-orange-200"
         >
           Add to Cart
