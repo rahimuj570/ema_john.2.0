@@ -7,6 +7,7 @@ import SingleProduct from "./SingleProduct";
 import fakeData from "../../fakeData/products.json";
 import { useState } from "react";
 import LocalDB from "../../hooks/LocalDB";
+import { toast } from "react-toastify";
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -47,8 +48,21 @@ const Products = () => {
   };
 
   const clearCarts = () => {
-    setCarts([]);
-    localStorage.removeItem("cartList");
+    if (carts.length === 0) alert("Nothing to clear!!!");
+    else {
+      setCarts([]);
+      localStorage.removeItem("cartList");
+      toast.success("Successfully Cart is Cleared", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
   };
 
   return (

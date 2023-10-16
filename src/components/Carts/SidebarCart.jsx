@@ -30,16 +30,6 @@ const SidebarCart = ({ carts, clearCarts }) => {
       <button
         onClick={() => {
           clearCarts();
-          toast.success("Successfully Cart is Cleared", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-          });
         }}
         className="btn bg-rose-500 py-2 px-5 hover:bg-red-600 duration-200 outline-none text-white rounded"
       >
